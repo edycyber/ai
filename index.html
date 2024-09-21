@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed LlamaCoder</title>
+  <style>
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<iframe src="https://llamacoder.together.ai/" id="llamacoder-frame"></iframe>
+
+<script>
+  // Wait for the iframe to fully load
+  document.getElementById('llamacoder-frame').onload = function() {
+    var iframe = document.getElementById('llamacoder-frame').contentWindow.document;
+    
+    // Hide header (logo, LlamaCoder, GitHub button)
+    var header = iframe.querySelector('header');
+    if (header) {
+      header.style.display = 'none';
+    }
+
+    // Hide footer (Built with Llama 3.1 405B and Together AI)
+    var footer = iframe.querySelector('footer');
+    if (footer) {
+      footer.style.display = 'none';
+    }
+  };
+</script>
+
+</body>
+</html>
