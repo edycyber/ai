@@ -3,18 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Embed LlamaCoder</title>
+  <title>Embed LlamaCoder with Image and Button</title>
   <style>
     iframe {
       width: 100%;
       height: 100vh;
       border: none;
     }
+    .content {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .content img {
+      max-width: 100%;
+      height: auto;
+    }
+    .content button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .content button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
 
+<!-- Iframe for embedding LlamaCoder -->
 <iframe src="https://llamacoder.together.ai/" id="llamacoder-frame"></iframe>
+
+<!-- Image and Button below the iframe -->
+<div class="content">
+  <img src="https://via.placeholder.com/600x200.png?text=Your+Image+Here" alt="Your Image">
+  <br>
+  <button onclick="alert('Button clicked!')">Click Me</button>
+</div>
 
 <script>
   // Wait for the iframe to fully load
